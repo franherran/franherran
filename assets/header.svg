@@ -1,115 +1,335 @@
-<svg fill="none" viewBox="0 0 800 320" width="800" height="320" xmlns="http://www.w3.org/2000/svg">
+<svg fill="none" viewBox="0 0 800 1400" width="800" height="1400" xmlns="http://www.w3.org/2000/svg">
   <foreignObject width="100%" height="100%">
     <div xmlns="http://www.w3.org/1999/xhtml">
       <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
-        @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
-        @keyframes slideIn { from { opacity: 0; transform: translateX(-20px); } to { opacity: 1; transform: translateX(0); } }
-        @keyframes pulse { 0%, 100% { opacity: 0.4; } 50% { opacity: 1; } }
+        @keyframes pulse { 0%, 100% { opacity: 0.3; } 50% { opacity: 0.8; } }
         .container {
           font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
           background: #0d1117;
           color: #e6edf3;
-          height: 320px;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          justify-content: center;
+          min-height: 1400px;
           position: relative;
           overflow: hidden;
+          padding: 0 40px 40px;
         }
         .grid {
           position: absolute;
           top: 0; left: 0; right: 0; bottom: 0;
           background-image:
-            linear-gradient(rgba(0,68,129,0.03) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(0,68,129,0.03) 1px, transparent 1px);
+            linear-gradient(rgba(0,68,129,0.04) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(0,68,129,0.04) 1px, transparent 1px);
           background-size: 40px 40px;
         }
         .glow {
           position: absolute;
-          width: 300px;
-          height: 300px;
+          width: 400px;
+          height: 400px;
           border-radius: 50%;
-          background: radial-gradient(circle, rgba(0,68,129,0.12) 0%, transparent 70%);
-          top: 50%;
+          background: radial-gradient(circle, rgba(0,68,129,0.10) 0%, transparent 70%);
+          top: 140px;
           left: 50%;
-          transform: translate(-50%, -50%);
+          transform: translateX(-50%);
           animation: pulse 4s ease-in-out infinite;
         }
         .content {
           position: relative;
           z-index: 1;
+        }
+
+        /* HERO */
+        .hero {
           text-align: center;
+          padding: 60px 0 50px;
         }
         .greeting {
-          font-size: 14px;
+          font-size: 13px;
           color: #004481;
-          letter-spacing: 4px;
+          letter-spacing: 5px;
           text-transform: uppercase;
           font-weight: 500;
+          margin-bottom: 14px;
           animation: fadeIn 0.8s ease-out;
-          margin-bottom: 12px;
         }
         .name {
-          font-size: 42px;
+          font-size: 44px;
           font-weight: 700;
           color: #ffffff;
           letter-spacing: -1px;
           animation: fadeIn 0.8s ease-out 0.2s both;
-          margin-bottom: 16px;
+          margin-bottom: 14px;
         }
         .role {
           font-size: 16px;
           color: #8b949e;
           font-weight: 400;
           animation: fadeIn 0.8s ease-out 0.4s both;
-          margin-bottom: 24px;
+          margin-bottom: 20px;
         }
-        .role .highlight {
-          color: #004481;
-          font-weight: 500;
-        }
+        .role .hl { color: #004481; font-weight: 500; }
         .line {
-          width: 60px;
+          width: 50px;
           height: 2px;
           background: linear-gradient(90deg, transparent, #004481, transparent);
-          margin: 0 auto 20px;
-          animation: fadeIn 0.8s ease-out 0.6s both;
+          margin: 0 auto 22px;
         }
-        .tags {
+        .hero-tags {
           display: flex;
           gap: 8px;
           justify-content: center;
-          animation: fadeIn 0.8s ease-out 0.8s both;
+          flex-wrap: wrap;
         }
-        .tag {
+        .hero-tag {
           font-family: 'Courier New', monospace;
           font-size: 12px;
           color: #004481;
           background: rgba(0,68,129,0.08);
-          border: 1px solid rgba(0,68,129,0.15);
-          padding: 4px 12px;
+          border: 1px solid rgba(0,68,129,0.18);
+          padding: 5px 14px;
           border-radius: 4px;
           letter-spacing: 1px;
+        }
+
+        /* DIVIDER */
+        .divider {
+          height: 1px;
+          background: linear-gradient(90deg, transparent 0%, rgba(0,68,129,0.15) 50%, transparent 100%);
+          margin: 10px 0 36px;
+        }
+
+        /* SECTION */
+        .section-title {
+          font-size: 12px;
+          color: #004481;
+          letter-spacing: 4px;
+          text-transform: uppercase;
+          font-weight: 500;
+          margin-bottom: 20px;
+        }
+
+        /* CODE BLOCK */
+        .code-block {
+          background: rgba(0,0,0,0.3);
+          border: 1px solid rgba(48,54,61,0.6);
+          border-radius: 8px;
+          padding: 20px 24px;
+          font-family: 'Courier New', monospace;
+          font-size: 13px;
+          line-height: 1.7;
+          color: #8b949e;
+          margin-bottom: 10px;
+        }
+        .code-block .key { color: #c9d1d9; }
+        .code-block .str { color: #a5d6ff; }
+        .code-block .punct { color: #6e7681; }
+
+        /* STACK */
+        .stack-grid {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 8px;
+          justify-content: center;
+          margin-bottom: 10px;
+        }
+        .stack-badge {
+          font-size: 11px;
+          font-weight: 500;
+          color: #c9d1d9;
+          background: rgba(255,255,255,0.04);
+          border: 1px solid rgba(48,54,61,0.5);
+          padding: 6px 14px;
+          border-radius: 6px;
+          letter-spacing: 0.5px;
+        }
+        .lang-badge {
+          font-size: 12px;
+          font-weight: 600;
+          color: #ffffff;
+          background: rgba(0,68,129,0.12);
+          border: 1px solid rgba(0,68,129,0.25);
+          padding: 8px 20px;
+          border-radius: 6px;
+          letter-spacing: 1px;
+          text-transform: uppercase;
+        }
+
+        /* PROJECTS */
+        .project {
+          display: flex;
+          align-items: center;
+          padding: 14px 0;
+          border-bottom: 1px solid rgba(48,54,61,0.3);
+        }
+        .project:last-child { border-bottom: none; }
+        .project-name {
+          font-size: 14px;
+          font-weight: 600;
+          color: #004481;
+          min-width: 160px;
+        }
+        .project-desc {
+          font-size: 13px;
+          color: #8b949e;
+          flex: 1;
+        }
+        .project-stack {
+          display: flex;
+          gap: 6px;
+          flex-wrap: wrap;
+          justify-content: flex-end;
+        }
+        .project-tech {
+          font-family: 'Courier New', monospace;
+          font-size: 10px;
+          color: #6e7681;
+          background: rgba(0,0,0,0.25);
+          padding: 3px 8px;
+          border-radius: 3px;
+        }
+
+        /* CONNECT */
+        .connect {
+          text-align: center;
+          padding: 10px 0 0;
+        }
+        .connect-text {
+          font-size: 14px;
+          color: #8b949e;
+          margin-bottom: 6px;
+        }
+        .connect-email {
+          font-size: 14px;
+          color: #004481;
+          font-weight: 500;
         }
       </style>
       <div class="container">
         <div class="grid"></div>
         <div class="glow"></div>
         <div class="content">
-          <div class="greeting">Hello World</div>
-          <div class="name">Francisco Herrán</div>
-          <div class="role">Full Stack Developer · Co-Founder at <span class="highlight">Alher Tech</span></div>
-          <div class="line"></div>
-          <div class="tags">
-            <span class="tag">React</span>
-            <span class="tag">Next.js</span>
-            <span class="tag">Spring Boot</span>
-            <span class="tag">TypeScript</span>
-            <span class="tag">AWS</span>
+
+          <!-- HERO -->
+          <div class="hero">
+            <div class="greeting">Hello World</div>
+            <div class="name">Francisco Herrán</div>
+            <div class="role">Full Stack Developer · Co-Founder at <span class="hl">Alher Tech</span></div>
+            <div class="line"></div>
+            <div class="hero-tags">
+              <span class="hero-tag">React</span>
+              <span class="hero-tag">Next.js</span>
+              <span class="hero-tag">Spring Boot</span>
+              <span class="hero-tag">TypeScript</span>
+              <span class="hero-tag">AWS</span>
+            </div>
           </div>
+
+          <div class="divider"></div>
+
+          <!-- ABOUT -->
+          <div class="section-title">About</div>
+          <div class="code-block">
+            <span class="punct">const </span><span class="key">francisco</span> <span class="punct">= {</span><br/>
+            <span class="punct">    </span><span class="key">location</span><span class="punct">: </span><span class="str">"Madrid, Spain"</span><span class="punct">,</span><br/>
+            <span class="punct">    </span><span class="key">role</span><span class="punct">: </span><span class="str">"Full Stack Developer &amp; Co-Founder @ Alher Tech"</span><span class="punct">,</span><br/>
+            <span class="punct">    </span><span class="key">education</span><span class="punct">: </span><span class="str">"Software Engineering · UPM"</span><span class="punct">,</span><br/>
+            <span class="punct">    </span><span class="key">building</span><span class="punct">: [</span><span class="str">"Boathous"</span><span class="punct">, </span><span class="str">"Alher Tech — +9 projects shipped"</span><span class="punct">],</span><br/>
+            <span class="punct">};</span>
+          </div>
+
+          <div class="divider"></div>
+
+          <!-- LANGUAGES -->
+          <div class="section-title">Languages</div>
+          <div class="stack-grid" style="margin-bottom: 24px;">
+            <span class="lang-badge">TypeScript</span>
+            <span class="lang-badge">Java</span>
+            <span class="lang-badge">Python</span>
+            <span class="lang-badge">JavaScript</span>
+          </div>
+
+          <!-- STACK -->
+          <div class="section-title">Stack</div>
+          <div class="stack-grid">
+            <span class="stack-badge">React</span>
+            <span class="stack-badge">Next.js</span>
+            <span class="stack-badge">Astro</span>
+            <span class="stack-badge">React Native</span>
+            <span class="stack-badge">Tailwind</span>
+            <span class="stack-badge">Spring Boot</span>
+            <span class="stack-badge">Node.js</span>
+            <span class="stack-badge">Express</span>
+            <span class="stack-badge">PostgreSQL</span>
+            <span class="stack-badge">MongoDB</span>
+            <span class="stack-badge">Redis</span>
+            <span class="stack-badge">AWS</span>
+            <span class="stack-badge">Docker</span>
+            <span class="stack-badge">Vercel</span>
+            <span class="stack-badge">Stripe</span>
+            <span class="stack-badge">Firebase</span>
+            <span class="stack-badge">OpenAI</span>
+          </div>
+
+          <div class="divider"></div>
+
+          <!-- PROJECTS -->
+          <div class="section-title">Projects in Production</div>
+          <div>
+            <div class="project">
+              <div class="project-name">boathous.com</div>
+              <div class="project-desc">Boat rental &amp; sales marketplace</div>
+              <div class="project-stack">
+                <span class="project-tech">React</span>
+                <span class="project-tech">Spring Boot</span>
+                <span class="project-tech">Stripe</span>
+              </div>
+            </div>
+            <div class="project">
+              <div class="project-name">alquilia.io</div>
+              <div class="project-desc">AI-powered rental management</div>
+              <div class="project-stack">
+                <span class="project-tech">Next.js</span>
+                <span class="project-tech">Spring Boot</span>
+                <span class="project-tech">OpenAI</span>
+              </div>
+            </div>
+            <div class="project">
+              <div class="project-name">nurdoc.es</div>
+              <div class="project-desc">Home healthcare platform</div>
+              <div class="project-stack">
+                <span class="project-tech">Next.js</span>
+                <span class="project-tech">Spring Boot</span>
+                <span class="project-tech">Maps</span>
+              </div>
+            </div>
+            <div class="project">
+              <div class="project-name">almia.education</div>
+              <div class="project-desc">AI educational platform</div>
+              <div class="project-stack">
+                <span class="project-tech">Next.js</span>
+                <span class="project-tech">Spring Boot</span>
+                <span class="project-tech">OpenAI</span>
+              </div>
+            </div>
+            <div class="project">
+              <div class="project-name">reservpark.com</div>
+              <div class="project-desc">Smart parking app</div>
+              <div class="project-stack">
+                <span class="project-tech">React Native</span>
+                <span class="project-tech">Spring Boot</span>
+                <span class="project-tech">AWS</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="divider"></div>
+
+          <!-- CONNECT -->
+          <div class="connect">
+            <div class="connect-text">Open to projects and collaborations</div>
+            <div class="connect-email">francisco.herran@alhertech.com</div>
+          </div>
+
         </div>
       </div>
     </div>

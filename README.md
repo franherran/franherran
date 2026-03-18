@@ -8,40 +8,6 @@
 
 </div>
 
-```typescript
-const francisco = {
-    location: "Madrid, Spain",
-    role: "Full Stack Developer & Co-Founder @ Alher Tech",
-    education: "Software Engineering · Universidad Politécnica de Madrid",
-    building: ["Boathous — Boat rental marketplace", "Alher Tech — Software agency, +9 projects shipped"],
-};
-```
-
----
-
-### Languages
-
-<div align="center">
-
-![TypeScript](https://img.shields.io/badge/TypeScript-0d1117?style=for-the-badge&logo=typescript&logoColor=3178C6)
-![Java](https://img.shields.io/badge/Java-0d1117?style=for-the-badge&logo=openjdk&logoColor=ED8B00)
-![Python](https://img.shields.io/badge/Python-0d1117?style=for-the-badge&logo=python&logoColor=3776AB)
-![JavaScript](https://img.shields.io/badge/JavaScript-0d1117?style=for-the-badge&logo=javascript&logoColor=F7DF1E)
-
-</div>
-
-### Stack
-
-<div align="center">
-
-[![Stack](https://skillicons.dev/icons?i=react,nextjs,astro,tailwind,spring,nodejs,express,postgres,mongodb,redis,aws,docker,vercel,github,stripe,firebase&perline=8&theme=dark)](https://skillicons.dev)
-
-</div>
-
----
-
-### GitHub Stats
-
 <div align="center">
 
 <picture>
@@ -67,44 +33,8 @@ const francisco = {
 
 </div>
 
----
-
-### Projects in Production
-
-<table>
-  <tr>
-    <td align="center" width="160"><a href="https://boathous.com"><b>boathous.com</b></a></td>
-    <td>Boat rental & sales marketplace</td>
-    <td><code>React</code> <code>Spring Boot</code> <code>PostgreSQL</code> <code>Stripe</code></td>
-  </tr>
-  <tr>
-    <td align="center" width="160"><a href="https://alquilia.io"><b>alquilia.io</b></a></td>
-    <td>AI-powered rental management</td>
-    <td><code>Next.js</code> <code>TypeScript</code> <code>Spring Boot</code> <code>OpenAI</code></td>
-  </tr>
-  <tr>
-    <td align="center" width="160"><a href="https://nurdoc.es"><b>nurdoc.es</b></a></td>
-    <td>Home healthcare platform</td>
-    <td><code>Next.js</code> <code>Spring Boot</code> <code>Google Maps</code></td>
-  </tr>
-  <tr>
-    <td align="center" width="160"><a href="https://almia.education"><b>almia.education</b></a></td>
-    <td>AI educational platform</td>
-    <td><code>Next.js</code> <code>Spring Boot Reactivo</code> <code>OpenAI</code></td>
-  </tr>
-  <tr>
-    <td align="center" width="160"><a href="https://reservpark.com"><b>reservpark.com</b></a></td>
-    <td>Smart parking app</td>
-    <td><code>React Native</code> <code>Next.js</code> <code>Spring Boot</code> <code>AWS</code></td>
-  </tr>
-</table>
-
----
-
 <div align="center">
 
 ![Profile Views](https://komarev.com/ghpvc/?username=franherran&style=flat-square&color=004481&label=views)
 
 </div>
-
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0d1117,100:004481&height=80&section=footer" width="100%"/>
